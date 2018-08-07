@@ -12,7 +12,6 @@ def get_path():
     print(sys.version)
     current_path = os.getcwd()
     file_list = os.listdir(current_path)
-    print(file_list)
     for item in file_list:
         config_path = ''
         if config_file in item:
