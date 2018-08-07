@@ -3,6 +3,7 @@
 import os
 import sys
 import time
+import pywinauto
 
 path = [{'微信':"C:\Program Files (x86)\Tencent\WeChat\WeChat.exe"},{'QQ':"D:\QQ\Bin\QQScLauncher.exe"}]
 list_item =list([list(dicts.keys()) for dicts in path])
