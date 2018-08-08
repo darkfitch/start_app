@@ -3,13 +3,16 @@
 import os
 import sys
 import time
+import json
 import pywinauto
 
 path = [{'微信':"C:\Program Files (x86)\Tencent\WeChat\WeChat.exe"},{'QQ':"D:\QQ\Bin\QQScLauncher.exe"}]
 list_item =list([list(dicts.keys()) for dicts in path])
-config_file = 'config.txt'
+config_file = 'config.json'
 def get_path():
-    print(sys.version)
+    sys_version = sys.version
+    if sys_version[0] == '3':
+        pass
     current_path = os.getcwd()
     file_list = os.listdir(current_path)
     for item in file_list:
@@ -18,9 +21,18 @@ def get_path():
             config_path = os.path.join(current_path,config_file)
             break
     try:
-        with open(config_path, 'rb') as f:
-            temp = f.readlines()
+        with open(config_path, 'r') as f:
+            temp = []
+            for i in f:
+                temp.append(i)
+            # temp = f.readline()
             print(temp)
+
+
+            temp_a = json.load(f)
+            print(temp_a)
+
+
     except Exception as e:
         print(e)
         # with open()

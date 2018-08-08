@@ -1,2 +1,0 @@
-{'н╒пе':"C:\Program Files (x86)\Tencent\WeChat\WeChat.exe"}
-{'QQ':"D:\QQ\Bin\QQScLauncher.exe"}
