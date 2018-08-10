@@ -39,6 +39,7 @@ def get_path():
 
 
 def start_app():
+    app = pywinauto.Application()
     while True:
         for index in range(len(list_item)):
             print(index+1, ':' + list_item[index][0])
@@ -50,7 +51,15 @@ def start_app():
                 break
             else:
                 real_path = list(path[get_input-1].values())[0]
-                os.startfile(real_path)
+                # 开启程序的方法1
+                # os.startfile(real_path)
+
+                # 开启程序 方法二:
+                try:
+                    app.start(real_path)
+                    
+                except:
+                    pass
                 print('\n\n')
 
         except Exception as e:
